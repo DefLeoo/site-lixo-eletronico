@@ -1,0 +1,9 @@
+{% load il8n %}
+
+{% trans "ativar sua conta " %}{{ site.name }}:
+
+http:///{{ site.domain }}{% 'registration_activate' activation_key %}
+http://127.0.01:8000/accounts/activate/e4155146f0aaca1d4d9f57ef70df457110429671
+
+
+{% blocktrans %}email valido durante {{ expirations_days }} dias.{% endblocktrans %}

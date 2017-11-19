@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block head_title %}WELCOME | {{ block.super }}{% endblock %}
+
+<!--formatação da pagina inicial lixo eletronico base.html e inincio.html esta documentos-->
+<style>
+   {% block style %}
+       .jumbotron{
+             background-color: #172548!important;!important;
+             color:#FFFFFF !important;
+             font-family: "COURIER", 'Verdana', arial;
+
+   }
+   {% endblock %}
+</style>
+
+<!--ajustando o site mais para esquerda para colocar video-->
+{% block jumbotron %}
+<div class="jumbotron">
+  <div class="container">
+
+      <div class="row">
+             <div class="col-sm-6">
+                 <h1><strong>Os resíduos eletrônicos</strong></h1>
+                 <p>O site foi desenvolvido pelos alunos do 3 periodo do curso ciência da computação
+                 instituição de ensino  unincor....</p>
+
+                 <a class="btn btn-lg btn-primary" href="{% url 'detalhes' %}" role="button">Detalhes &raquo;</a>
+                 </p>
+             </div>
+
+
+          <!--colocando video no site-->
+            <div class='col-sm-6'  ><iframe width="560" height="315" src="https://www.youtube.com/embed/s-ciU_ir8Z0" frameborder="0" allowfullscreen></iframe></div>
+      </div>
+  </div>
+</div>
+
+<!--{% endblock %}
+
+
+{{ block.super }}
+
+{{ titulo }}<br/>
+{{ request.user }}
+<hr/>
+<br/>
+
+<!--formulario do site
+{% block content %}
+<div class="row">
+    <div class="col-sm-3 col-xs-12 pull-right">
+        <p class="lead text-align-center">  {{ titulo }} </p>
+        {% if not user.is_authenticated %}
+        <form method="POST" action="">{% csrf_token %}
+            {{ el_form|crispy }}
+            <input type='submit' value="Enviar"/>
+        </form>
+        {% else%}
+        <p>blablabbls</p>
+        {% endif %}
+    </div>-->
+
+    <!--texto embaixo do site-->
+     <!-- class="lead text-align-center esta conf no arquivo custom.css para centralizar os textos-->
+<div class="inicio">
+    <div class="col-sm-4">
+        <p class="lead text-align-center">Lixo eletrônico:</p>
+        <p class="lead"> É todo residuo material produzido pelo descarte de equipamentos eletrônicos.
+        Com o elevado uso de equipamentos eletrônicos no mundo moderno,este tipo de lixo....</p>
+
+
+
+        <img src="{% static 'img/lixo-eletronico.jpg'%}"  class="img-responsive">
+
+        <a class="btn btn-lg btn-primary" href="{% url 'lixo' %}" role="button">Detalhes &raquo;</a>
+    </div>
+
+      <div class="col-sm-4  ">
+           <p class="lead text-align-center">Soluções:</p>
+           <p class="lead">-Descartar de forma correta</p>
+           <p class="lead">-Procurar pontos de descartes</p>
+           <p class="lead">-Se informar  a respeito </p>
+
+
+          <img src="{% static 'img/1.png'%}" width="350" height="350" class="img-responsive"/>
+
+          <a class="btn btn-lg btn-primary" href="{% url 'solucoes' %}" role="button">Detalhes &raquo;</a>
+
+      </div>
+
+
+    <div class="col-sm-4">
+
+        <p class="lead text-align-center">Discusão:</p>
+        <p class="lead">Oque temos a ganhar com o mesmo,quais conseguências são
+        geradas para o meio </p>
+
+
+        <img src="{% static 'img/ambiente.jpg' %} "width="300" height="250" class="img-responsive">
+        <a class="btn btn-lg btn-primary" href="/" role="button">Detalhes &raquo;</a>
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block baixo %}
+{% load static %}
+<hr class="footer"  width="100%"/>
+<div class="footer">
+<footer class="text-align-center">
+        <p><i>by Equipe projeto integrador</i><br/>
+        <a href="http://facebook.com/bone.lmago"target="_blank">facebook</a>
+        <a href="http://twitter.com/DruDruu"target="_blank">twiter</a>
+        </p>
+</footer>
+</div>
+
+{% endblock %}

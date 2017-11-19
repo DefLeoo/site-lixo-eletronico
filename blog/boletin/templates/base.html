@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>projeto integrador </title>
+
+<style>
+   {% block deta %}{% endblock %}
+</style>
+
+
+<style>
+   {% block style %}{% endblock %}
+</style>
+
+
+{% include "head_css.html" %}
+
+  </head>
+
+<body id="o">
+  {% include "navbar.html" %}
+
+
+  <!--ajusta o site para que ocupe toda a tela sintaxe  <div class="container-fluid">-->
+  {% block jumbotron %}
+      {% endblock %}
+  <div class="container">
+
+      {% block content %}
+      {% endblock %}
+
+  </div>
+
+
+  <div class="baixo">
+    {% block baixo %}
+    {% endblock %}
+  </div>
+ <!-- /container -->
+</body>
+</html>
+

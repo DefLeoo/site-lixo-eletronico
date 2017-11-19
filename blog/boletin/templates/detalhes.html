@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+<style>
+{% block deta  %}
+    .estilo{
+      background-color:FFF!important;
+      color:black !important;
+      font-family: times new roman;
+    }
+{% endblock %}
+</style>
+
+
+{% block content %}
+<div class="estilo">
+    <h1 class="lead text-align-center">Como está na atualidade lixo eletrônico:</h1>
+
+     <p class="lead"> A preocupação com as ações e os consequentes impactos da atividade humana ao meio ambiente pode ser considerada recente. As discussões sobre o tema aconteceram nas últimas décadas devido à gravidade da situação. O principal fator talvez seja o modelo de produção urbano industrial que tem provocado a poluição ambiental das águas, do solo e do ar. A concentração de milhões de pessoas nos centros urbanos tem mostrado a população uma péssima perspectiva de atendimento as necessidades mais elementares,
+    como alimentação, moradia, abastecimento de água, tratamento sanitário, serviços de coleta e destinação do lixo urbano, elementos essenciais para saúde humana. Diante deste cenário, um dos principais desafios é a busca por estratégias para administrar o processo de degradação da qualidade ambiental, em consequência do aumento expressivo da poluição associada ao esgotamento dos recursos naturais e a geração de resíduos domésticos e industriais. Nesta busca pela eficácia no uso dos recursos naturais, a sociedade
+     necessita de práticas inovadoras de gestão, principalmente para amenizar os problemas causados pelo consumo elevado, o ritmo acelerado da inovação tecnológica e a chamada obsolência programada fazem com que grande parte dos equipamentos eletrônicos transforme-se em “sucata tecnológica” em um curto espaço de tempo, os mesmos são descartados na maioria das vezes, por falta de informação ou até mesmo local apropriado para descarte dos mesmos e jogado em local onde a sua disposição final não é ambientalmente adequada
+     gerando assim uma poluição, ou seja, lixo eletrônico. Hoje em dia a sociedade em geral está sempre muito atualizada adquirindo produtos novos, o chamado consumismo, desencadeado e sem controle.O qual proporciona ciclos de substituição de equipamentos cada vez mais acelerados e uma relação direta com o aumento da produção do lixo eletrônico. O principal fator que pode motivar a desatualização destes equipamentos e a sua transformação em lixo eletrônico é que, em geral, a aquisição de um aparelho novo é monetária e
+     tecnologicamente mais vantajosa que o reparo de um usado. As pessoas perdem o hábito de usar algo até queele esteja completamente desgastado, ao primeiro sinal de defeito são substituídos por um novo produto. Os impactos socioambientais associados ao rápido crescimento desses resíduos, a consequente incapacidade de metabolização dos mesmos, têm sido mundialmente reconhecidos como um risco emergente para o meio ambiente e a saúde pública, devido aos crescentes volumes de sucatas geradas e as substâncias tóxicas presentes
+     em sua composição.</p>
+
+</div>
+<div class="foto">
+     <img src="{% static 'img/meio.jpg'%} " width="450" height="450>
+</div>
+
+{% endblock  %}
+
+{% block baixo %}
+{% load static %}
+<hr class="footer"  width="100%"/>
+<div class="footer">
+<footer class="text-align-center">
+        <p><i>by Equipe projeto integrador</i><br/>
+        <a href="http://facebook.com/bone.lmago"target="_blank">facebook</a>
+        <a href="http://twitter.com/DruDruu"target="_blank">twiter</a>
+        </p>
+</footer>
+</div>
+
+{% endblock %}
+
+
+

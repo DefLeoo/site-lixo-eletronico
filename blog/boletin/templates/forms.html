@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+<!--formatação do formulario contact">-->
+{{ titulo }}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        {% if titulo %}
+        <h1 class="text-align-center">{{ titulo }}</h1>
+        {% endif %}
+          <form method="POST" action="">{% csrf_token %}
+               {{ form|crispy }}
+               <input class="btn btn-primary" type='submit' value="Enviar"/>
+          </form>
+    </div>
+</div>
+{% endblock %}
+{% block baixo %}
+{% load static %}
+<hr class="footer"  width="100%" color="red"/>
+<div class="footer">
+<footer class="text-align-center">
+        <p><i>by Equipe projeto integrador</i><br/>
+        <a href="http://facebook.com/bone.lmago"target="_blank">facebook</a>
+        <a href="http://twitter.com/DruDruu"target="_blank">twiter</a>
+        </p>
+</footer>
+</div>
+
+{% endblock %}

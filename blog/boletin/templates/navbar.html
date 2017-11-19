@@ -1,0 +1,61 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a  class="navbar-brand" href="/">Bem vindo</a>
+        </div>
+        <ul id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-static-top ">
+              <li ><a href="/">Inicio</a></li>
+              <li><a href="{% url 'about' %}">Dicas</a></li>
+             <li><a href="{% url 'page' %}">Local</a></li>
+              <li><a href="/contact">Contato</a></li>
+
+           <!-- <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <!--<ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>-->
+          </ul>
+
+
+          <ul class="nav navbar-nav navbar-right">
+                     {% if request.user.is_authenticated and not "/accounts/login" in request.get_full_path %}
+                         <li><a href="{% url 'auth_logout' %}">Sair</a></li>
+                     {% else %}
+                       --<li><a href="{% url 'registration_register' %}">Registrar</a></li>
+                         <!-- <li ><a href="{% url 'auth_login' %}">Entrar</a></li>-->
+
+
+          </ul>
+                 {% if not request.user.id_authenticates %}
+                 <form class="navbar-form navbar-right" method="POST" action="{%  url 'auth_login' %}">{% csrf_token %}
+                     <div class="form-group">
+                          <input type="text" class="form-control" name="username" placeholder="Usuario"/>
+                     </div>
+                     <div class="form-group">
+                          <input type="password" class="form-control" name="password" placeholder="Senha"/>
+                     </div>
+                     <button type="submit" class="btn btn-default">Entrar</button>
+                    <!-- <button type="submit" class="btn btn-default">Registrar</button>-->
+                 </form>
+                 {% endif %}
+                 {% endif %}
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
